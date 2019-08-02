@@ -1,11 +1,13 @@
 <template>
   <div class="hello">
     <parent></parent>
+    <outer></outer>
   </div>
 </template>
 
 <script>
 import parent from './parent';
+import outer from './outer';
 export default {
   name: 'HelloWorld',
   data () {
@@ -14,7 +16,8 @@ export default {
     }
   },
   components:{
-    parent
+    parent,
+    outer
   }
 }
 </script>

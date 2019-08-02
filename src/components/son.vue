@@ -1,6 +1,7 @@
 <template>
   <div>
     <span>我是子组件</span>---{{msg}}<br>
+    子组件拿到的共享数据--{{getNum}}<br>
     <button @click="msgToParent">点击发送信息给父组件</button>
   </div>
 </template>
@@ -22,9 +23,16 @@ export default {
     msgToParent:function(){
       this.$emit('handle',this.sendMsg)
     }
+  },
+  computed:{
+    getNum: function(){
+      return this.$store.state.num
+    }
   }
 }
 </script>
 <style scoped>
-
+  span{
+    background: lightgreen;
+  }
 </style>

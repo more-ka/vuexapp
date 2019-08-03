@@ -2,6 +2,7 @@
   <div>
     <span>我是父组件</span>-----{{fromSonMsg}}<br>
     父组件拿到的共享数据--{{getCount}}<button @click="padd">父组件改变状态</button>
+    <button @click="paddActive">父组件改变状态(active)</button>
     <hr>
     <son :msg="msgToSon" @handle="getMsgToSon"></son>
   </div>
@@ -22,6 +23,9 @@ export default {
     },
     padd(){
       this.$store.commit('increase')
+    },
+    paddActive(){
+      this.$store.dispatch('decreaseActive')
     }
   },
   components:{

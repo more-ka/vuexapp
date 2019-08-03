@@ -33,7 +33,8 @@ export default {
   },
   computed:{
     getNum: function(){
-      return this.$store.state.num
+      // return this.$store.state.num
+      return this.$store.getters.getNum
     }
   }
 }

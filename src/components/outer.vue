@@ -9,7 +9,8 @@ export default {
   name: 'outer',
   computed:{
     getOuterNum:function(){
-      return this.$store.state.num
+      return this.$store.getters.getNum
+      // return this.$store.state.num
     }
   },
   methods:{

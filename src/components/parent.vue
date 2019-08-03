@@ -1,7 +1,7 @@
 <template>
   <div>
     <span>我是父组件</span>-----{{fromSonMsg}}<br>
-    父组件拿到的共享数据--{{getCount}}
+    父组件拿到的共享数据--{{getCount}}<button @click="padd">父组件改变状态</button>
     <hr>
     <son :msg="msgToSon" @handle="getMsgToSon"></son>
   </div>
@@ -19,6 +19,9 @@ export default {
   methods:{
     getMsgToSon(value){
       this.fromSonMsg = value
+    },
+    padd(){
+      this.$store.commit('increase')
     }
   },
   components:{

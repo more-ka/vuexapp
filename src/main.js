@@ -12,7 +12,12 @@ Vue.config.productionTip = false
 
 var store = new Vuex.Store({
   state: {
-    num: 53231323
+    num: 53
+  },
+  mutations:{
+    increase:function(state){
+      state.num += 1
+    }
   }
 })
 // 直接通过this.$sore.state.XXX拿到全局状态
